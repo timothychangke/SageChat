@@ -3,7 +3,10 @@ import React from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 var prompt = `You: `;
-var response = '';
+var response_txt = '';
+const output_audio = new SpeechSynthesisUtterance();
+output_audio.rate = 0.85;
+output_audio.pitch = 1.2;
 
 const Chatting = () => {
 
@@ -60,11 +63,15 @@ const Chatting = () => {
           prompt += "\nYou:"
           console.log(tmp)
           addtranslation(tmp);
+          output_audio.text = tmp;
+          window.speechSynthesis.speak(output_audio);
           });
 
-          response = response.concat(translatedtranscript);
+          response_txt = response_txt.concat(translatedtranscript);
 
-        console.log(translatedtranscript)
+        console.log(translatedtranscript);
+
+        
     }
     else {
       resetTranscript()
