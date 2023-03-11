@@ -3,15 +3,14 @@ import React from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 var prompt = `You: `;
+var response = '';
 
 const Chatting = () => {
-
-    /*const [language_name, setlanguagename] = React.useState('English')*/
 
     const [translatedtranscript, settranslated] = React.useState("")
 
     const addtranslation = (translation) => {
-      const tmp = translation + "\n"
+      const tmp = translation + "\n\n"
       settranslated(prev => tmp+prev)
     };
 
@@ -33,29 +32,15 @@ const Chatting = () => {
         SpeechRecognition.stopListening()
 
         console.log(transcript)
+        
 
-        /* Chat-GPT api */
+        /* Chat-GPT api process.env.REACT_APP_API */
         const { Configuration, OpenAIApi } = require('openai');
         const configuration = new Configuration({
             apiKey: process.env.REACT_APP_API
         });
         const openai = new OpenAIApi(configuration);          
-        /*
-        openai.createCompletion({
-          model: "text-davinci-003",
-            prompt:`Translate this into ${language_name}:\n\n${transcript}\n\n`, 
-            temperature:0.7,
-            max_tokens:200,
-            top_p:1.0,
-            frequency_penalty:0.2,
-            presence_penalty:0.2
-              })
-        .then((response) => {
-        const tmp = response.data.choices[0].text;
-        console.log(tmp)
-        addtranslation(tmp);
-        })
-        */
+      
         prompt += transcript
         prompt += "\nFriend: "
         
@@ -76,6 +61,8 @@ const Chatting = () => {
           console.log(tmp)
           addtranslation(tmp);
           });
+
+          response = response.concat(translatedtranscript);
 
         console.log(translatedtranscript)
     }
