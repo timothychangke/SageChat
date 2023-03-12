@@ -39,8 +39,7 @@ With this, the AI will also be able to better protect conversation privacy, prev
 
 ## Files
 
-In the root folder, you can type in 
-###`npm start`###
+In the root folder, you can type in `npm start`
 which will run the chat bot interface that will be shown to the elderlies. 
 
 In this webpage, the elderlies will be able to speak into it and a voice will talk back to them.
