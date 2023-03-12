@@ -102,10 +102,14 @@ button {
 textarea {
   resize: none;
   text-align: center;
-  margin:20px;
-  font-size:20px;
-  font-family: Optima, sans-serif
+  margin: 20px;
+  font-size: 20px;
+  font-family: Optima, sans-serif;
+  height: 100%;
+  border: none;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5);
 }
+
 
 .text-area{
   display: inline-block;
