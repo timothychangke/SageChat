@@ -40,7 +40,7 @@ const Chatting = () => {
         /* Chat-GPT api process.env.REACT_APP_API */
         const { Configuration, OpenAIApi } = require('openai');
         const configuration = new Configuration({
-            apiKey: "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"
+            apiKey: process.env.REACT_APP_API
         });
         const openai = new OpenAIApi(configuration);          
       
