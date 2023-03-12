@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
-var prompt = `You: `;
+var prompt = `You: Did you sleep well last night?\nFriend: Yes I did! Did you sleep well last night?\nYou:`;
 var response_txt = '';
 const output_audio = new SpeechSynthesisUtterance();
 output_audio.rate = 0.85;
@@ -40,7 +40,7 @@ const Chatting = () => {
         /* Chat-GPT api process.env.REACT_APP_API */
         const { Configuration, OpenAIApi } = require('openai');
         const configuration = new Configuration({
-            apiKey: process.env.REACT_APP_API
+            apiKey: "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"
         });
         const openai = new OpenAIApi(configuration);          
       
