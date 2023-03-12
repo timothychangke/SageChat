@@ -2,7 +2,9 @@ import boto3
 import json
 import spacy
 import pandas as pd
+import numpy as np
 from tqdm import tqdm
+import seaborn as sns
 
 """
 Once the sentiment for the conversation reaches a certain negative limit, we can alert social workers who can take human action
@@ -28,6 +30,10 @@ sentiment_df['Positive'] = positive_arr
 sentiment_df['Negative']=negative_arr
 print(sentiment_df)
 
+plot = sns.histplot(data = sentiment_df, x = sentiment_df['Negative'])
+fig = plot.get_figure()
+fig.savefig("out.png") 
+
 """
 We can also extract some medical data that could be in the conversation
 Would be able to extract out medical information such as drugs, dosage, duration and other relevant information such that
@@ -50,3 +56,6 @@ for i in tqdm(range(7)):
             data_collected.append((ent.text, ent.label_))
 
 print(data_collected)
+
+
+# Deploying with streamlit 

@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# SageChat
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Introducing the productivity solution in the age of the Silver Tsunami.
 
-## Available Scripts
+## The current problem
 
-In the project directory, you can run:
+With the population of the elderly only poised to skyrocket and the number of working adults to diminish, the workload on social workers and governmental organizations to look after the aged population is
+getting heavier by the day.
 
-### `npm start`
+Social workers would have to visit more elderlies throughout the day and governmental organization's manpower would be spreadout thin to cover the whole population.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## The solution
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+We propose this AI innovation to alleviate the stress and take on the workload for these sectors.
 
-### `npm test`
+SageChat will be like a friendly neighbour to the elderlies, checking in everyday and being there for them when they want to talk about the old times.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+However, it isn't just a chat bot. 
 
-### `npm run build`
+While conversing with the elderlies, it will be able to detect the sentiments of elderlies, how they are feeling, whether they had a good nights sleep, whether they took the right medications and so much more. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Of course! Privacy of the conversation is number one priority, thus the bot will only collect crucial medical related information. No other parts of the conversations would be stored in the database.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+With these information, the bot would help streamline the work for the social workers. Instead of stressing themselves out to go visit and check up on every elderly, they can focus their limited attention and time onto those elderlies that are in dire need of human or medical assistance. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The bot would periodically report back with medical information of the elderlies it converses with. With this collated information, the social workers and organizations will have an easier and more productive time identifying those elderlies in need of care and attention.
 
-### `npm run eject`
+This can also be relayed to the respective doctors whom can prescribe more medication or even suggest a visit to the hospital.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Future Improvements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+With more data collected, I believe our AI will be able to more accurately detect crucial medical information from conversations using NLP technologies. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Hopefully, it will be able to detect whether the elderly is showing early signs of dementia or other illnesses that may go unnoticed for a long time. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This would be both beneficial to the social industry and to the elderlies. 
 
-## Learn More
+With this, the AI will also be able to better protect conversation privacy, preventing any unnecessary leaks of information and privacy.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Files
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In the root folder, you can type in 
+###`npm start`###
+which will run the chat bot interface that will be shown to the elderlies. 
 
-### Code Splitting
+In this webpage, the elderlies will be able to speak into it and a voice will talk back to them.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Behind the scenes, with the conversation data collected, we used AWS Comprehend to detect sentiment throughout the conversation and relay extremely negative conversations back to the workers. 
 
-### Analyzing the Bundle Size
+Additionally, we also used Med7, a python-based AI library that is effective in detecting medication related data throughout the conversation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Tech used 
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* text-davinci-003 - OpenAi
+* AWS Comprehend - Amazon
+* Med7 - HuggingFace
+* React JS
