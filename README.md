@@ -1,6 +1,7 @@
 # SageChat
 
 Introducing the productivity solution in the age of the Silver Tsunami.
+
 Submission for [Aifinity 2023](https://aifinity-2023.devpost.com/).
 
 ## The current problem
